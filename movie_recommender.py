@@ -15,7 +15,10 @@ class MovieRecommender:
     def load_data(self, filepath: str):
         """Load and preprocess the movie dataset"""
         print("Loading dataset...")
-        self.movies_df = pd.read_csv(filepath)
+        file_id = "1MJw_O3S_BEL7rWGNujilB86S0E1qNvaR"
+        url = f"https://drive.google.com/uc?export=download&id={file_id}"
+        self.movies_df = pd.read_csv(url)
+        
 
         # Select relevant columns
         required_cols = ['title', 'genres', 'keywords', 'cast', 'crew', 'overview']
